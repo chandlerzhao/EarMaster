@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EarMaster</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="interval_practice">音程练习</string>
+    <string name="interval_compare">音程比较</string>
+    <string name="interval_reco">音程辨认</string>
+    <string name="cinterval_reco">连续音程辨认</string>
+    <string name="interval_gamut">转调音程</string>
+    <string name="chord_practice">和弦练习</string>
+    <string name="chord_reco3">三和弦辨认</string>
+    <string name="chord_reco7">七和弦辨认</string>
+    <string name="chord_trans3">三和弦转位</string>
+    <string name="chord_trans7">七和弦转位</string>
+    <string name="chord_comp3">三和弦综合</string>
+    <string name="chord_comp7">七和弦综合</string>
+    <string name="chord_reco_maj">大调和弦辨认</string>
+    <string name="chord_gamut">转调和弦</string>
+    <string name="absolute_practice">绝对音准</string>
+    <string name="absolute_sing">绝对音准视唱</string>
+    <string name="absolute_hear">绝对音准练耳</string>
+    <string name="title_activity_interval_compare">音程比较</string>
+    <string name="title_activity_interval_reco">音程辨认</string>
+    <string name="title_activity_cinterval_reco">连续音程辨认</string>
+    <string name="title_activity_interval_gamut">转调音程</string>
+    <string name="title_activity_chord_reco3">三和弦辨认</string>
+    <string name="title_activity_chord_reco7">七和弦辨认</string>
+    <string name="title_activity_chord_trans3">三和弦转位</string>
+    <string name="title_activity_chord_trans7">七和弦转位</string>
+    <string name="title_activity_chord_comp3">三和弦综合</string>
+    <string name="title_activity_chord_comp7">七和弦综合</string>
+    <string name="title_activity_chord_reco_maj">大调和弦辨认</string>
+    <string name="title_activity_chord_gamut">转调和弦</string>
+    <string name="title_activity_absolute_sing">AbsoluteSing</string>
+    <string name="title_activity_absolute_hear">AbsoluteHear</string>
+
+</resources>

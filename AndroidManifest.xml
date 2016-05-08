@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.neo.earmaster"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+ 
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntervalCompare"
+            android:label="@string/title_activity_interval_compare"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".IntervalReco"
+            android:label="@string/title_activity_interval_reco"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CIntervalReco"
+            android:label="@string/title_activity_cinterval_reco"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".IntervalGamut"
+            android:label="@string/title_activity_interval_gamut"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordReco3"
+            android:label="@string/title_activity_chord_reco3"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordReco7"
+            android:label="@string/title_activity_chord_reco7"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordTrans3"
+            android:label="@string/title_activity_chord_trans3"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordTrans7"
+            android:label="@string/title_activity_chord_trans7"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordComp3"
+            android:label="@string/title_activity_chord_comp3"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordComp7"
+            android:label="@string/title_activity_chord_comp7"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordRecoMaj"
+            android:label="@string/title_activity_chord_reco_maj"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChordGamut"
+            android:label="@string/title_activity_chord_gamut"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AbsoluteSing"
+            android:label="@string/title_activity_absolute_sing"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AbsoluteHear"
+            android:label="@string/title_activity_absolute_hear"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.neo.earmaster.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
