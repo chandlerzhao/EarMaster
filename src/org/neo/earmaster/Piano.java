@@ -27,6 +27,7 @@ public class Piano {
 		this.context = context;
 		seed = date.getSeconds();
 		ran.setSeed(seed);
+		soundMap = new HashMap<Integer, Integer>();
 		try {
 			genNotes();
 		} catch (IllegalAccessException e) {
