@@ -3,39 +3,47 @@ package org.neo.earmaster;
 import java.util.Random;
 
 import android.content.Context;
-import android.media.MediaPlayer;
+import android.media.AudioManager;
+import android.media.SoundPool;
+
 import java.util.Date;
+import java.util.HashMap;
 
 public class Piano {
 
 	private final String[] group = {"0","1","2","3","4","5","6","7","8"};
 	private final String[] scale = {"c","cs","d","ds","e","f","fs","g","gs","a","as","b"};
-	public String[] notes;
-	private Random ran;
-	private Date date;
+	private String[] noteName;
+	private int[] noteResId;
+	private HashMap<Integer, Integer> soundMap;
+	private Random ran = new Random();
+	private Date date = new Date();;
 	private int seed;
 	private int ranInt;
 	private Context context;
-	private MediaPlayer mp;
+	private SoundPool soundPool;
 	
 	public Piano(Context context){
 		this.context = context;
-		notes = new String[88];
-		notes[0] = "a0";
-		notes[1] = "as0";
-		notes[2] = "b0";
-		for(int i = 3; i < 88; i++){
-			int groupid = (i - 3) / 12;
-			int scaleid = (i - 3) % 12;
-			notes[i] = scale[scaleid]+ group[groupid];
-		}
-		for(int i=0; i<88; i++){
-			System.out.println(notes[i]);
-		}
-		ran = new Random();
-		date = new Date();
-		seed = date.getDay();
+		seed = date.getSeconds();
 		ran.setSeed(seed);
+		try {
+			genNotes();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		soundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
+		for(int i = 0;i < 88; i++){
+			soundMap.put(i, soundPool.load(context, noteResId[i], 1));
+		}
 	}
 	public int genRandomNote(){
 		this.ranInt = ran.nextInt(88);
@@ -45,20 +53,25 @@ public class Piano {
 		return ran.nextInt(13);
 	}
 	
-	public int playNote(int noteId){
-		try{
-			String noteString = this.notes[noteId];
-			int noteInt;
-			System.out.println(noteString);
-			noteInt = R.raw.class.getField(noteString).getInt(R.raw.class.getField(noteString));
-			System.out.println(noteInt);
-			mp = MediaPlayer.create(context, noteInt);
-			mp.start();
-		} catch (Exception e){
-			e.printStackTrace();
+	public void genNotes() throws IllegalAccessException, IllegalArgumentException, NoSuchFieldException{
+		int i;
+		noteName = new String[88];
+		noteResId = new int[88];
+		noteName[0] = "a0";
+		noteName[1] = "as0";
+		noteName[2] = "b0";
+		for(i = 3; i < 88; i++){
+			int groupid = (i - 3) / 12;
+			int scaleid = (i - 3) % 12;
+			noteName[i] = scale[scaleid]+ group[groupid];
 		}
-		System.out.println(mp);
-		mp.release();
-		return noteId;
+		for(i = 0;i < 88;i++){
+			noteResId[i] = R.raw.class.getField(this.noteName[i]).getInt(R.raw.class.getField(this.noteName[i]));
+			System.out.format("%d %s %d\n", i, noteName[i], noteResId[i]);
+		}
+	}
+	
+	public void playNote(int noteId){
+		soundPool.play(soundMap.get(noteId), 1, 1, 0, 0, 1);
 	}
 }
